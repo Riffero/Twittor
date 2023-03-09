@@ -1,6 +1,12 @@
+var url = window.location.href;
+var swLocation = "/Twittor/sw.js"
+
 //registracion sw
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+    if(url.includes('localhost'))
+        swLocation = '/sw.js';
+
+    navigator.serviceWorker.register(swLocation);
 }
 
 
